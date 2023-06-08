@@ -1,7 +1,9 @@
 package com.example.theaddresspms;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,29 +11,38 @@ import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
-
+  CardView cardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
 
-        ImageView backgroundImage = findViewById(R.id.backgroundImage);
 
-// Apply blur effect
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            RenderScript rs = RenderScript.create(this);
-            Allocation overlayAlloc = Allocation.createFromBitmap(rs, BitmapFactory.decodeResource(getResources(), R.drawable.address));
-            ScriptIntrinsicBlur blur = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
-            blur.setInput(overlayAlloc);
-            blur.setRadius(25); // Adjust the blur radius as per your preference
-            blur.forEach(overlayAlloc);
-            overlayAlloc.copyTo(BitmapFactory.decodeResource(getResources(), R.drawable.address));
-            rs.destroy();
-        }
+        cardView = findViewById(R.id.addProperty);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "okkk ....!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomeActivity.this, AddProperty.class));
+            }
+        });
+
+        cardView = findViewById(R.id.viewPropertyList);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "okkk ....!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomeActivity.this, ViewPropertyList.class));
+            }
+        });
+
+
 
     }
 }

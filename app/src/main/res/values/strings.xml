@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TheAddressPms</string>
+    <array name="types">
+        <item>Flat</item>
+        <item>Building</item>
+
+    </array>
+
+
 </resources>

@@ -23,7 +23,7 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
 
-        String query = "Create Table Employee (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, AREA TEXT,ADDRESS TEXT,PRICE INTEGER ,TYPE TEXT)";
+        String query = "Create Table Property (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, AREA TEXT,ADDRESS TEXT,PRICE INTEGER ,TYPE TEXT)";
 
 
 
@@ -80,7 +80,7 @@ public class Database extends SQLiteOpenHelper {
     public boolean updateProperty(Property pro) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-
+        values.put("ID",pro.getId());
         values.put("NAME", pro.getName());
         values.put("AREA", pro.getArea());
         values.put("ADDRESS", pro.getAddress());

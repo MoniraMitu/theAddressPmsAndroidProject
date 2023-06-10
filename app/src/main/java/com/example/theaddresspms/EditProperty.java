@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import com.example.theaddresspms.database.Database;
 public class EditProperty extends AppCompatActivity {
     EditText edName,  edArea, edAddress, edPrice,  edId;
     Button btn;
+    Button btn1;
 
 
 
@@ -31,7 +33,7 @@ public class EditProperty extends AppCompatActivity {
 //        spinnerDepartment = sqLiteCreateFragment.spinnerDepartment;
 
         btn = findViewById(R.id.buttonEDIT);
-        btn = findViewById(R.id.buttonBack);
+        btn1 = findViewById(R.id.buttonBack);
 
 
 
@@ -53,6 +55,14 @@ public class EditProperty extends AppCompatActivity {
         Toast.makeText(this, "NAME: "+name+" , AREA: "+ area+", ADDRESS: "+ address, Toast.LENGTH_SHORT).show();
 
         Database db = new Database(getApplicationContext(), "theAddress", null,1);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(EditProperty.this, ViewPropertyList.class));
+            }
+        });
 
     }
 }

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +44,7 @@ public class ViewPropertyList extends AppCompatActivity {
 
         sa = new SimpleAdapter(this,
                viewPropertyList,
-                R.layout.activity_view_property_list,
+                R.layout.property,
                 new String[]{"ID", "NAME","AREA", "ADDRESS", "PRICE"},
                 new int[]{R.id.line_id1, R.id.line_c1, R.id.line_d1, R.id.line_e1 , R.id.line_f1}
         ) {
@@ -108,6 +109,9 @@ public class ViewPropertyList extends AppCompatActivity {
 
 
         };
+
+        ListView lv=findViewById(R.id.listViewUD);
+        lv.setAdapter(sa);
 
     }
 

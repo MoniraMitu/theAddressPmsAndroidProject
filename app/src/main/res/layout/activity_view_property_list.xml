@@ -4,35 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back2"
+    android:background="@color/white"
     tools:context=".ViewPropertyList">
 
 
     <TextView
         android:id="@+id/propertyList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="276dp"
+        android:layout_height="33dp"
+        android:background="@color/teal_700"
         android:text="Property List"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="center"
         android:textColor="@color/black"
-        android:background="@color/colorWhite"
-        app:layout_constraintVertical_bias="0.05" />
-
-    <Button
-        android:id="@+id/createButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create New Property"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.347"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.046" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -41,6 +31,7 @@
         android:orientation="horizontal"
         android:weightSum="1"
         app:layout_constraintBottom_toBottomOf="@+id/listViewUD"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.134">
@@ -51,82 +42,96 @@
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_weight="0.05"
+            android:background="@color/colorWhite"
             android:backgroundTint="@color/colorWhite"
             android:text="ID"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:background="@color/colorWhite"
             android:textSize="13sp" />
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="80dp"
+            android:layout_width="45dp"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
+            android:background="@color/colorWhite"
             android:text="Name"
             android:textColor="@color/black"
-            android:background="@color/colorWhite"
             android:textSize="13sp" />
 
         <TextView
             android:id="@+id/area"
-            android:layout_width="80dp"
+            android:layout_width="49dp"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
+            android:background="@color/colorWhite"
             android:text="Area"
             android:textColor="@color/black"
-            android:background="@color/colorWhite"
             android:textSize="13sp" />
 
         <TextView
             android:id="@+id/address"
-            android:layout_width="79dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.30"
+            android:background="@color/colorWhite"
             android:text="Address"
             android:textColor="@color/black"
-            android:background="@color/colorWhite"
             android:textSize="13sp" />
 
         <TextView
             android:id="@+id/price"
-            android:layout_width="87dp"
+            android:layout_width="47dp"
             android:layout_height="match_parent"
             android:layout_weight="0.20"
+            android:background="@color/colorWhite"
             android:text="Price"
             android:textColor="@color/black"
-            android:background="@color/colorWhite"
             android:textSize="13sp" />
 
         <TextView
             android:id="@+id/type"
-            android:layout_width="87dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_weight="0.20"
+            android:background="@color/colorWhite"
             android:text="Type"
             android:textColor="@color/black"
-            android:background="@color/colorWhite"
             android:textSize="13sp" />
 
         <TextView
             android:id="@+id/action"
-            android:layout_width="103dp"
+            android:layout_width="93dp"
             android:layout_height="match_parent"
             android:layout_weight="0.10"
+            android:background="@color/colorWhite"
             android:text="Action"
             android:textColor="@color/black"
-            android:background="@color/colorWhite"
             android:textSize="13sp" />
     </LinearLayout>
 
+
     <ListView
         android:id="@+id/listViewUD"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_width="410dp"
+        android:layout_height="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.536" />
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create New Property"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,6 +54,7 @@ public class ViewPropertyList extends AppCompatActivity {
 
                 ImageView editBtn = v.findViewById(R.id.emp_edit_btn1);
                 ImageView delBtn = v.findViewById(R.id.emp_del_btn1);
+                ImageView proView = v.findViewById(R.id.pro_Image);
 
 
                 editBtn.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +105,35 @@ public class ViewPropertyList extends AppCompatActivity {
                 });
 
 
+                proView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        System.out.println(position);
+                        HashMap<String, String>  property = new HashMap<>();
+
+                        try {
+//                            System.out.println(v.findViewById(R.id.line_c).toString());
+
+                            property= (HashMap<String, String>) viewPropertyList.get(position);
+
+
+                            System.out.println(viewPropertyList.get(position));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+//                        Toast.makeText(EmpListActivity.this, "Edit button clicked!! + " + position + user, Toast.LENGTH_SHORT).show();
+//                        System.out.println("EDIT----");
+                        Intent intent = new Intent(getApplicationContext(), ViewProperty.class);
+                        intent.putExtra("ID",  property.get("ID"));
+                        intent.putExtra("NAME",  property.get("NAME"));
+                        intent.putExtra("AREA",  property.get("AREA"));
+                        intent.putExtra("ADDRESS",  property.get("ADDRESS"));
+                        intent.putExtra("PRICE",  property.get("PRICE"));
+
+                        startActivity(intent);
+                    }
+                });
                 return v;
             }
 

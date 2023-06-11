@@ -61,7 +61,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/buyProperty"
+            android:id="@+id/viewProperty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -89,7 +89,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BUY PROPERTY"
+                    android:text="VIEW PROPERTY"
                     android:textAlignment="center"
                     android:textColor="@color/teal_700"
                     android:textStyle="bold" />
@@ -164,7 +164,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="VIEW PROPERTY"
+                    android:text="VIEW PROPERTY LIST"
                     android:textAlignment="center"
                     android:textColor="@color/teal_700"
                     android:textStyle="bold" />
@@ -173,7 +173,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardOrderDetails"
+            android:id="@+id/cardFind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="2"
@@ -211,7 +211,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardExit"
+            android:id="@+id/cardBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="2"

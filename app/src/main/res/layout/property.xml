@@ -18,6 +18,12 @@
             android:textColor="@color/gold"
             android:textSize="13sp" />
 
+        <ImageView
+            android:id="@+id/pro_Image"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/house2" />
+
         <TextView
             android:id="@+id/line_c1"
             android:layout_width="93dp"

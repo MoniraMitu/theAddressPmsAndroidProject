@@ -117,7 +117,7 @@
         android:layout_height="46dp"
         android:background="@drawable/input_bg"
         android:backgroundTint="@color/blue"
-        android:text="Save"
+        android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

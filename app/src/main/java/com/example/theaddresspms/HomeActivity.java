@@ -42,6 +42,35 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        cardView = findViewById(R.id.viewProperty);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "okkk ....!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomeActivity.this, ViewProperty.class));
+            }
+        });
+
+        cardView = findViewById(R.id.findProperty);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "okkk ....!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomeActivity.this, FindProperty.class));
+            }
+        });
+
+
+        cardView = findViewById(R.id.cardBack);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(HomeActivity.this, LogOut.class));
+                Toast.makeText(getApplicationContext(), "Logged Out ...!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
     }

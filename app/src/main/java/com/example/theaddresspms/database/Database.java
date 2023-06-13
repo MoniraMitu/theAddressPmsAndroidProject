@@ -25,9 +25,11 @@ public class Database extends SQLiteOpenHelper {
 
         String query = "Create Table Property (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, AREA TEXT,ADDRESS TEXT,PRICE INTEGER ,TYPE TEXT)";
 
-
+        String query2 =  "Create Table User (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, GENDER TEXT, EMAIL TEXT, " +
+                "PASSWORD TEXT,CONTACT INTEGER)";
 
         db.execSQL(query);
+        db.execSQL(query2);
 
     }
 
@@ -48,6 +50,22 @@ public class Database extends SQLiteOpenHelper {
 
         DB.insert("Property",null,values);
         DB.close();
+    }
+
+    public int logInActivity(String userName,String password){
+        int result=0;
+        String []arr= new String[2];
+
+        arr[0]=userName;
+        arr[1]=password;
+
+        SQLiteDatabase DB= this.getWritableDatabase();
+
+        Cursor c=DB.rawQuery("seLect * from User where NAME=? and PASSWORD =?" ,arr);
+
+        ;if(c.moveToFirst()){
+            return  1;
+        }else  return  0;
     }
 
     public ArrayList<HashMap<String, String>> getAllProperty() {
@@ -99,6 +117,21 @@ public class Database extends SQLiteOpenHelper {
         db.close();
         return rowCount > 0;
     }
+
+    public  void addNewUser(String userName, String email, String password,Integer contact){
+        SQLiteDatabase DB= this.getReadableDatabase();
+
+
+        ContentValues values= new ContentValues();
+        values.put("Name",userName);
+        values.put("Email",email);
+        values.put("Password",password);
+        values.put("Contact",contact);
+
+        DB.insert("User",null,values);
+        DB.close();
+    }
+
 
 
 }

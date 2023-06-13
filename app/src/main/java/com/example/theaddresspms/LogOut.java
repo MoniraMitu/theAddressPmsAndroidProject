@@ -20,7 +20,7 @@ public class LogOut extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LogOut.this, HomeActivity.class));
+                startActivity(new Intent(LogOut.this, LogInActivity.class));
             }
         });
     }
